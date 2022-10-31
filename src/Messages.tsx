@@ -43,7 +43,7 @@ export function Messages({ messages, id }: MessagesProps) {
   return (
     <div
       id={id}
-      style={{ height: '600px', maxHeight: '100vh' }}
+      style={{ height: 'calc( 100vh - 100px )', maxHeight: '100vh' }}
       className="overflow-y-scroll"
     >
       {messages.map((message) => (
