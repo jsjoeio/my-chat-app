@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// @ts-ignore
+// @ts-ignore -- no types available
 import PullToRefresh from 'pulltorefreshjs';
 import App from './App';
 import './index.css';
