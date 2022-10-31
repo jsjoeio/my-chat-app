@@ -3,6 +3,6 @@ https://fakeiphonemessage.com/
 inspiration: https://twitter.com/levelsio/status/1550208037176152065?s=20&t=kpH1V5k3YtQ3CIy8WcaIvQ
 
 Next steps:
-- make CSS look correct on mobile
+- make CSS look correct on mobile, not sure what I need to do, maybe fixed header but when keyboard pops up, it does not work lol.
 
 
