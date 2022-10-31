@@ -1,6 +1,6 @@
 import { MessageType } from './Messages';
 
-export type MessageProps = {
+type MessageProps = {
   message: MessageType;
 };
 
@@ -27,4 +27,5 @@ function Message({ message }: MessageProps) {
   );
 }
 
+export {};
 export default Message;
