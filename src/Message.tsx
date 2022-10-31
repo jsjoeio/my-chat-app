@@ -1,6 +1,6 @@
 import { MessageType } from './Messages';
 
-type MessageProps = {
+export type MessageProps = {
   message: MessageType;
 };
 
