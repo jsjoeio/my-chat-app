@@ -24,11 +24,11 @@ export function Input({ onSubmit }: InputProps) {
 
   return (
     <div className="sticky b-0 bg-slate-200 pt-1 pb-2 border-slate-200 border-t-2">
-      <form className="flex justify-between" onSubmit={handleSubmit}>
+      <form className="flex justify-between w-full" onSubmit={handleSubmit}>
         <div
           id="message-input"
           contentEditable="true"
-          className="text-left bg-white px-2 py-1 text-sm text-black w-64 mx-2"
+          className="w-10/12 text-left bg-white px-2 py-1 text-sm text-black w-64 mx-2"
           placeholder="Message"
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
@@ -45,7 +45,7 @@ export function Input({ onSubmit }: InputProps) {
         />
         <button
           type="submit"
-          className="p-1 px-4 text-sm bg-white text-stone-500 font-bold mx-2"
+          className="w-2/12 p-1 px-4 text-sm bg-white text-stone-500 font-bold mx-2"
         >
           Send
         </button>
