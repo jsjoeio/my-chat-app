@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import { MessageType, Messages } from './Messages';
 import { Input } from './Input';
 import Header from './Header';
