@@ -23,7 +23,7 @@ export function Input({ onSubmit }: InputProps) {
   }
 
   return (
-    <div className="bg-slate-200 pt-1 pb-2 border-slate-200 border-t-2">
+    <div className="sticky b-0 bg-slate-200 pt-1 pb-2 border-slate-200 border-t-2">
       <form className="flex justify-between" onSubmit={handleSubmit}>
         <div
           id="message-input"

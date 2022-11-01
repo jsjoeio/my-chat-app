@@ -19,8 +19,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
-html,
-body {
+.msg-container {
   height: calc(var(--vh, 1vh) * 100);
 }
 
