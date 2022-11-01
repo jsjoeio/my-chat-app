@@ -13,10 +13,11 @@ PullToRefresh.init({
 });
 
 const resizeOps = () => {
-  document.documentElement.style.setProperty(
-    '--vh',
-    window.innerHeight * 0.01 + 'px'
-  );
+  // document.documentElement.style.setProperty(
+  //   '--vh',
+  //   window.innerHeight * 0.01 + 'px'
+  // );
+  console.log("resize happened")
 };
 
 resizeOps();
