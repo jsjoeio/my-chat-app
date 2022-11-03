@@ -19,3 +19,9 @@ Basically I need to do two things:
 The hardest part will be doing the math calculations. Ideally I can do something
 based on vh like for header...100vh - {message height} - {input height} = margin-top
 
+## Resources
+
+for real iMessage styles, credit this: https://codepen.io/AllThingsSmitty/pen/jommGQ
+
+also this is my excuse to use daisyUI: https://daisyui.com/
+
