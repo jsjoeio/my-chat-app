@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { MessageType, Messages } from './Messages';
-import { Input } from './Input';
-import Header from './Header';
+import { useEffect, useState } from "react";
+import { MessageType, Messages } from "./Messages";
+import { Input } from "./Input";
+import Header from "./Header";
 
-const MESSAGE_CONTAINER = 'msg-container';
+const MESSAGE_CONTAINER = "msg-container";
 
 function buildMessage(
-  userId: MessageType['userId'],
-  id: MessageType['id'],
-  text: MessageType['text']
+  userId: MessageType["userId"],
+  id: MessageType["id"],
+  text: MessageType["text"]
 ): MessageType {
   return {
     id,
@@ -19,7 +19,7 @@ function buildMessage(
 }
 
 function App() {
-  const [currentUserId, setCurrentUserId] = useState<'left' | 'right'>('right');
+  const [currentUserId, setCurrentUserId] = useState<"left" | "right">("right");
   const [messages, setMessages] = useState<MessageType[]>([]);
 
   useEffect(() => {
@@ -37,16 +37,16 @@ function App() {
       <Header />
       <Messages id={MESSAGE_CONTAINER} messages={messages} />
       <Input
-        onSubmit={(text: MessageType['text']) => {
-          const defaultId = '123';
+        onSubmit={(text: MessageType["text"]) => {
+          const defaultId = "123";
 
           const msg = buildMessage(currentUserId, defaultId, text);
           setMessages([...messages, msg]);
 
-          if (currentUserId === 'left') {
-            setCurrentUserId('right');
+          if (currentUserId === "left") {
+            setCurrentUserId("right");
           } else {
-            setCurrentUserId('left');
+            setCurrentUserId("left");
           }
         }}
       />

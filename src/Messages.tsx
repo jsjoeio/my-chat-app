@@ -2,7 +2,7 @@ export type MessageType = {
   id: string;
   text: string;
   timestamp: number;
-  userId: 'left' | 'right';
+  userId: "left" | "right";
 };
 
 // hello world
@@ -20,15 +20,15 @@ function Message({ message }: MessageProps) {
   return (
     <div
       className={`m-2 flex max-w-3/4 ${
-        message.userId === 'left' ? 'justify-end' : 'justify-start'
+        message.userId === "left" ? "justify-end" : "justify-start"
       }`}
     >
       <div
         key={message.id}
         className={`${
-          message.userId === 'left'
-            ? 'bg-blue-400 text-whitefsdaf'
-            : 'bg-slate-300 text-black'
+          message.userId === "left"
+            ? "bg-blue-400 text-whitefsdaf"
+            : "bg-slate-300 text-black"
         } rounded-full py-2`}
       >
         <p className="text-sm py-0 px-4 drop-shadow-sm inline text-left ">
@@ -43,7 +43,7 @@ export function Messages({ messages, id }: MessagesProps) {
   return (
     <div
       id={id}
-      style={{ height: 'calc( 100vh - 100px )', maxHeight: '100vh' }}
+      style={{ height: "calc( 100vh - 100px )", maxHeight: "100vh" }}
       className="overflow-y-scroll"
     >
       {messages.map((message) => (
