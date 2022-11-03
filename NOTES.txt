@@ -2,7 +2,20 @@ https://fakeiphonemessage.com/
 
 inspiration: https://twitter.com/levelsio/status/1550208037176152065?s=20&t=kpH1V5k3YtQ3CIy8WcaIvQ
 
-Next steps:
-- make CSS look correct on mobile, not sure what I need to do, maybe fixed header but when keyboard pops up, it does not work lol.
 
+RE: issue with header missing when keyboard open on mobile
+
+Okay I figured something out...when the keyboard is open I can get the header
+and the messages to show if I:
+- add padding-top to <Header />
+- shorten the height of <Messages />
+
+I'm sure there's a way where I could calculate it using some math.
+
+Basically I need to do two things:
+- onFocus of input (and isMobile) or on-screen keyboard? shorten heights...
+- onBlur of input (and isMobile) or on-screen keybaord? length heights...
+
+The hardest part will be doing the math calculations. Ideally I can do something
+based on vh like for header...100vh - {message height} - {input height} = margin-top
 
