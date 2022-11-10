@@ -32,3 +32,7 @@ https://react-spectrum.adobe.com/react-spectrum/Button.html
 
 then it will be great.
 
+https://github.com/blackslate/mobileKeyboardStatus
+
+I made a break through! Basically i need to adjust height and top: 100vh when the input is focused
+
