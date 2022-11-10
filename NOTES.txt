@@ -27,3 +27,5 @@ also this is my excuse to use daisyUI: https://daisyui.com/
 
 if i really want to get fancy, animation: https://codepen.io/fcalderan/pen/abBjOqV
 
+maybe use React Spectrum: https://react-spectrum.adobe.com/react-spectrum/TextArea.html
+
