@@ -9,6 +9,7 @@ export function Input({ onSubmit }: InputProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [message, setMessage] = React.useState("");
+  const [containerVh, setContainerVh] = React.useState("87vh");
 
   function handleSubmit(
     e:
@@ -23,12 +24,18 @@ export function Input({ onSubmit }: InputProps) {
       textareaRef.current.blur();
     }
 
-    buttonRef.current?.blur();
     e.currentTarget.blur();
   }
 
   return (
-    <div className="w-full b-0 bg-slate-200 pt-1 pb-2 border-slate-200 border-t-2">
+    <div
+      className="w-full b-0 bg-slate-200 pt-1 pb-2 border-slate-200 border-t-2"
+      style={{
+        position: "absolute",
+        top: containerVh,
+        width: "100%",
+      }}
+    >
       <form className="flex" onSubmit={handleSubmit}>
         <textarea
           ref={textareaRef}
@@ -41,11 +48,16 @@ export function Input({ onSubmit }: InputProps) {
             }
           }}
           onChange={(e) => setMessage(e.target.value)}
+          onFocus={() => {
+            // update position
+            setContainerVh("97vh");
+          }}
         />
         <button
           ref={buttonRef}
           type="submit"
           className="py-1 px-4 text bg-white text-stone-500 font-bold mx-2"
+          onClick={(e) => e.currentTarget.blur()}
         >
           Send
         </button>
