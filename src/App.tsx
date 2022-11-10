@@ -21,6 +21,7 @@ function buildMessage(
 function App() {
   const [currentUserId, setCurrentUserId] = useState<"left" | "right">("right");
   const [messages, setMessages] = useState<MessageType[]>([]);
+  const [isInputFocused, setIsInputFocused] = useState(false);
 
   useEffect(() => {
     const messageContainer = document.querySelector(`#${MESSAGE_CONTAINER}`);
@@ -34,22 +35,26 @@ function App() {
 
   return (
     <div className="App font-sans bg-white">
-      <Header />
-      <Messages id={MESSAGE_CONTAINER} messages={messages} />
-      <Input
-        onSubmit={(text: MessageType["text"]) => {
-          const defaultId = "123";
+      <Header isInputFocused={isInputFocused} />
+      <div className="h-screen">
+        <Messages id={MESSAGE_CONTAINER} messages={messages} />
+        <Input
+          onInputBlurredCallback={() => setIsInputFocused(false)}
+          onInputFocusedCallback={() => setIsInputFocused(true)}
+          onSubmit={(text: MessageType["text"]) => {
+            const defaultId = "123";
 
-          const msg = buildMessage(currentUserId, defaultId, text);
-          setMessages([...messages, msg]);
+            const msg = buildMessage(currentUserId, defaultId, text);
+            setMessages([...messages, msg]);
 
-          if (currentUserId === "left") {
-            setCurrentUserId("right");
-          } else {
-            setCurrentUserId("left");
-          }
-        }}
-      />
+            if (currentUserId === "left") {
+              setCurrentUserId("right");
+            } else {
+              setCurrentUserId("left");
+            }
+          }}
+        />
+      </div>
     </div>
   );
 }

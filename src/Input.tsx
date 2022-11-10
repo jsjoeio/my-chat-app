@@ -3,9 +3,15 @@ import { MessageType } from "./Messages";
 
 type InputProps = {
   onSubmit: (text: MessageType["text"]) => void;
+  onInputBlurredCallback: () => void;
+  onInputFocusedCallback: () => void;
 };
 
-export function Input({ onSubmit }: InputProps) {
+export function Input({
+  onSubmit,
+  onInputFocusedCallback,
+  onInputBlurredCallback,
+}: InputProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [message, setMessage] = React.useState("");
@@ -22,6 +28,7 @@ export function Input({ onSubmit }: InputProps) {
     if (textareaRef.current) {
       textareaRef.current.value = "";
       textareaRef.current.blur();
+      onInputBlurredCallback();
     }
 
     e.currentTarget.blur();
@@ -30,11 +37,13 @@ export function Input({ onSubmit }: InputProps) {
   return (
     <div
       className="w-full b-0 bg-slate-200 pt-1 pb-2 border-slate-200 border-t-2"
-      style={{
-        position: "absolute",
-        top: containerVh,
-        width: "100%",
-      }}
+      style={
+        {
+          // position: "absolute",
+          // top: containerVh,
+          // width: "100%",
+        }
+      }
     >
       <form className="flex" onSubmit={handleSubmit}>
         <textarea
@@ -51,6 +60,7 @@ export function Input({ onSubmit }: InputProps) {
           onFocus={() => {
             // update position
             setContainerVh("97vh");
+            onInputFocusedCallback();
           }}
         />
         <button
