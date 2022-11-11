@@ -19,19 +19,22 @@ type MessageProps = {
 function Message({ message }: MessageProps) {
   return (
     <div
-      className={`m-2 flex max-w-3/4 ${
+      className={`mx-2 my-4 flex max-w-3/4 ${
         message.userId === "left" ? "justify-end" : "justify-start"
       }`}
     >
       <div
+        style={{
+          maxWidth: "75%",
+        }}
         key={message.id}
         className={`${
           message.userId === "left"
             ? "bg-blue-400 text-whitefsdaf"
             : "bg-slate-300 text-black"
-        } rounded-full py-2`}
+        } rounded-full py-2 px-4 text-left`}
       >
-        <p className="text-sm py-0 px-4 drop-shadow-sm inline text-left ">
+        <p className="text-sm py-0 drop-shadow-sm inline text-left">
           {message.text}
         </p>
       </div>
@@ -41,7 +44,7 @@ function Message({ message }: MessageProps) {
 
 export function Messages({ messages, id }: MessagesProps) {
   return (
-    <div id={id} className="overflow-y-scroll z-0 relative mt-10">
+    <div id={id} className="overflow-y-scroll z-0 relative pt-20">
       {messages.map((message) => (
         <Message message={message} />
       ))}

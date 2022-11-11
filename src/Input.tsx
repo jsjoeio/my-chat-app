@@ -58,7 +58,7 @@ export function Input({
           }}
           onChange={(e) => setMessage(e.target.value)}
           onFocus={() => {
-            setBottomPos("-40px");
+            setBottomPos("-80px");
             onInputFocusedCallback();
           }}
         />
