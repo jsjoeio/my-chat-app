@@ -37,7 +37,11 @@ function App() {
     <div className="App font-sans bg-white">
       <Header isInputFocused={isInputFocused} />
       <div className="h-screen">
-        <Messages id={MESSAGE_CONTAINER} messages={messages} />
+        <Messages
+          id={MESSAGE_CONTAINER}
+          messages={messages}
+          isInputFocused={isInputFocused}
+        />
         <Input
           onInputBlurredCallback={() => setIsInputFocused(false)}
           onInputFocusedCallback={() => setIsInputFocused(true)}

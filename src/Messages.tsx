@@ -1,3 +1,5 @@
+import React from "react";
+
 export type MessageType = {
   id: string;
   text: string;
@@ -10,6 +12,7 @@ export type MessageType = {
 type MessagesProps = {
   messages: MessageType[];
   id: string;
+  isInputFocused: boolean;
 };
 
 type MessageProps = {
@@ -42,12 +45,23 @@ function Message({ message }: MessageProps) {
   );
 }
 
-export function Messages({ messages, id }: MessagesProps) {
+// need to calculate
+
+function calculatePaddingTopHeight(messagesCount: number): number {
+  const MESSAGE_HEIGHT = 4;
+  const calculated = 340 - messagesCount * MESSAGE_HEIGHT;
+  return calculated > 0 ? calculated : 0;
+}
+
+export function Messages({ messages, id, isInputFocused }: MessagesProps) {
   return (
     <div
       id={id}
       style={{
         height: "95vh",
+        paddingTop: isInputFocused
+          ? `${calculatePaddingTopHeight(messages.length)}px`
+          : "80px",
       }}
       className="overflow-y-scroll z-0 relative pt-20"
     >
