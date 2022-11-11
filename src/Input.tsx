@@ -56,6 +56,9 @@ export function Input({
               handleSubmit(e);
             }
           }}
+          onBlur={() => {
+            onInputBlurredCallback();
+          }}
           onChange={(e) => setMessage(e.target.value)}
           onFocus={() => {
             // update position
