@@ -48,10 +48,21 @@ function Message({ message }: MessageProps) {
 // need to calculate
 
 function calculatePaddingTopHeight(messagesCount: number): number {
-  const MESSAGE_HEIGHT = 4;
+  // need to adjust this formula
+  // message_height works well when it's only 3 but then when we get more,
+  // then when over 3, 20 works well but only until a certain point
+  // then it needs to just return 80
+  // not sure how to figure that out
+  let MESSAGE_HEIGHT = 4;
+  if (messagesCount > 3) {
+    MESSAGE_HEIGHT = 20;
+  }
   const calculated = 340 - messagesCount * MESSAGE_HEIGHT;
   return calculated > 0 ? calculated : 0;
 }
+
+// so it's 340 and formula works but when we get past 3 messages
+// maybe we return 80?
 
 export function Messages({ messages, id, isInputFocused }: MessagesProps) {
   return (
