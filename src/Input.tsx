@@ -15,7 +15,6 @@ export function Input({
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [message, setMessage] = React.useState("");
-  const [containerVh, setContainerVh] = React.useState("87vh");
 
   function handleSubmit(
     e:
@@ -36,14 +35,11 @@ export function Input({
 
   return (
     <div
-      className="w-full b-0 bg-slate-200 pt-1 pb-2 border-slate-200 border-t-2"
-      style={
-        {
-          // position: "absolute",
-          // top: containerVh,
-          // width: "100%",
-        }
-      }
+      className="w-full bg-slate-200 pt-1 pb-2 border-slate-200 border-t-2"
+      style={{
+        position: "absolute",
+        bottom: "-40px",
+      }}
     >
       <form className="flex" onSubmit={handleSubmit}>
         <textarea
@@ -61,8 +57,6 @@ export function Input({
           }}
           onChange={(e) => setMessage(e.target.value)}
           onFocus={() => {
-            // update position
-            setContainerVh("97vh");
             onInputFocusedCallback();
           }}
         />
