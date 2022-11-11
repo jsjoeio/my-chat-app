@@ -44,7 +44,13 @@ function Message({ message }: MessageProps) {
 
 export function Messages({ messages, id }: MessagesProps) {
   return (
-    <div id={id} className="overflow-y-scroll z-0 relative pt-20">
+    <div
+      id={id}
+      style={{
+        height: "95vh",
+      }}
+      className="overflow-y-scroll z-0 relative pt-20"
+    >
       {messages.map((message) => (
         <Message message={message} />
       ))}
